@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e53bbce5-da98-4691-b79e-4eb2f74de88d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ODIN</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)IOptimizedAsyncHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IOptimizedHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptimizedAsyncHandlerBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptimizedHandlerBase.cs" />
+  </ItemGroup>
+</Project>
