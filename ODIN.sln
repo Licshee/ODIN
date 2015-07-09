@@ -3,16 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin40", "Odin40\Odin40.csproj", "{9C5923C8-C89E-4C68-9C12-938A52E79795}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN-40", "ODIN-40\ODIN-40.csproj", "{9C5923C8-C89E-4C68-9C12-938A52E79795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdinPCL", "OdinPCL\OdinPCL.csproj", "{0FE0935D-451C-4CF1-AE74-B52F240C12C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN-Portable", "ODIN-Portable\ODIN-Portable.csproj", "{0FE0935D-451C-4CF1-AE74-B52F240C12C2}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ODIN", "ODIN\ODIN.shproj", "{E53BBCE5-DA98-4691-B79E-4EB2F74DE88D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN-Universal", "ODIN-Universal\ODIN-Universal.csproj", "{2D176461-2C40-44FA-B997-48D80A8ADD12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN-Legacy", "ODIN-Legacy\ODIN-Legacy.csproj", "{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ODIN\ODIN.projitems*{10f6eead-430d-4f1b-9df5-91f579c4ff41}*SharedItemsImports = 4
 		ODIN\ODIN.projitems*{9c5923c8-c89e-4c68-9c12-938a52e79795}*SharedItemsImports = 4
 		ODIN\ODIN.projitems*{0fe0935d-451c-4cf1-ae74-b52f240c12c2}*SharedItemsImports = 4
+		ODIN\ODIN.projitems*{2d176461-2c40-44fa-b997-48d80a8add12}*SharedItemsImports = 4
 		ODIN\ODIN.projitems*{e53bbce5-da98-4691-b79e-4eb2f74de88d}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +34,14 @@ Global
 		{0FE0935D-451C-4CF1-AE74-B52F240C12C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE0935D-451C-4CF1-AE74-B52F240C12C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE0935D-451C-4CF1-AE74-B52F240C12C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D176461-2C40-44FA-B997-48D80A8ADD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D176461-2C40-44FA-B997-48D80A8ADD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D176461-2C40-44FA-B997-48D80A8ADD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D176461-2C40-44FA-B997-48D80A8ADD12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
