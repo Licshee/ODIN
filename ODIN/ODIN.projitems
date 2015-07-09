@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)OptimizedAsyncHandlerBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptimizedHandlerBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
   </ItemGroup>
 </Project>
