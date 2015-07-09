@@ -6,18 +6,20 @@
         <authors>NanaLich</authors>
         <projectUrl>https://github.com/NanaLich/ODIN/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>-</description>
+        <description>Optimized Data Interface for .NET</description>
         <dependencies>
             <group targetFramework=".NETFramework4.0-Client">
                 <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
-                <dependency id="Microsoft.Bcl" version="1.1.8" />
-                <dependency id="Microsoft.Bcl.Build" version="1.0.14" />
             </group>
             <group targetFramework=".NETFramework4.5" />
+            <group targetFramework="Silverlight5.0">
+                <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
+            </group>
         </dependencies>
     </metadata>
     <files>
-        <file src="Odin40\ODIN.dll" target="lib\net40-client\ODIN.dll" />
-        <file src="OdinPCL\ODIN.dll" target="lib\portable-net45+win8+wp8+wpa81\ODIN.dll" />
+        <file src="ODIN-40\ODIN.dll" target="lib\net40-client\ODIN.dll" />
+        <file src="ODIN-Silverlight\ODIN.dll" target="lib\sl5\ODIN.dll" />
+        <file src="ODIN-Portable\ODIN.dll" target="lib\portable-net45+win8+wp8+wpa81\ODIN.dll" />
     </files>
 </package>

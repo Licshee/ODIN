@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN-Universal", "ODIN-Univ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN-Legacy", "ODIN-Legacy\ODIN-Legacy.csproj", "{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN-Silverlight", "ODIN-Silverlight\ODIN-Silverlight.csproj", "{C82968CA-0D0D-4468-B7FC-7DB04A8CAFFA}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ODIN\ODIN.projitems*{10f6eead-430d-4f1b-9df5-91f579c4ff41}*SharedItemsImports = 4
@@ -42,6 +44,10 @@ Global
 		{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10F6EEAD-430D-4F1B-9DF5-91F579C4FF41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82968CA-0D0D-4468-B7FC-7DB04A8CAFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82968CA-0D0D-4468-B7FC-7DB04A8CAFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82968CA-0D0D-4468-B7FC-7DB04A8CAFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82968CA-0D0D-4468-B7FC-7DB04A8CAFFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
