@@ -3,24 +3,34 @@ using System.Threading.Tasks;
 
 namespace ODIN
 {
-#if !NET40
-    using TaskEx = Task;
-#endif
-
     public abstract class OptimizedAsyncHandlerBase<TInput, TArguments, TOutput>
         : OptimizedHandlerBase<TInput, TArguments, TOutput>
     {
-        protected readonly static Task<TOutput> DefaultResultTask = TaskEx.FromResult(default(TOutput));
+        protected readonly static Task<TOutput> DefaultResultTask;
 
-        public async Task<TOutput> ExecuteAsync(TInput input)
+        static OptimizedAsyncHandlerBase()
         {
-            var args = await ExtractArgumentsAsync(input);
+            var defaultTCS = new TaskCompletionSource<TOutput>();
+            defaultTCS.SetResult(default(TOutput));
+            DefaultResultTask = defaultTCS.Task;
+        }
 
-            var result = await RetriveOptimizedAsync(args, input);
-            if (result != null)
-                return result;
+        public Task<TOutput> ExecuteAsync(TInput input)
+        {
+            return ExtractArgumentsAsync(input)
+                .ContinueWith(argsTask =>
+                {
+                    var args = argsTask.Result;
+                    return RetriveOptimizedAsync(args, input)
+                    .ContinueWith(resultTask =>
+                    {
+                        var result = resultTask.Result;
+                        if (result != null)
+                            return resultTask;
 
-            return await ProcessAsync(args);
+                        return ProcessAsync(args);
+                    }).Unwrap();
+                }).Unwrap();
         }
 
         private bool _IsSyncExtractArgumentsOverridden = true;
@@ -36,18 +46,18 @@ namespace ODIN
             _IsSyncExtractArgumentsOverridden = false;
             EnsureExtractArgumentsOverridden();
 
-            return TaskEx.Run(() => ExtractArgumentsAsync(input)).Result;
+            return Task.Factory.StartNew(() => ExtractArgumentsAsync(input)).Unwrap().Result;
         }
         public virtual Task<TArguments> ExtractArgumentsAsync(TInput input)
         {
             _IsAsyncExtractArgumentsOverridden = false;
             EnsureExtractArgumentsOverridden();
 
-            return TaskEx.Run(() => ExtractArguments(input));
+            return Task.Factory.StartNew(() => ExtractArguments(input));
         }
 
         protected override TOutput RetriveOptimized(TArguments args, TInput input)
-            => TaskEx.Run(() =>RetriveOptimizedAsync(args, input)).Result;
+            => Task.Factory.StartNew(() => RetriveOptimizedAsync(args, input)).Unwrap().Result;
         protected virtual Task<TOutput> RetriveOptimizedAsync(TArguments args, TInput input)
             => DefaultResultTask;
 
@@ -64,14 +74,14 @@ namespace ODIN
             _IsSyncProcessOverridden = false;
             EnsureProcessOverridden();
 
-            return TaskEx.Run(() => ProcessAsync(args)).Result;
+            return Task.Factory.StartNew(() => ProcessAsync(args)).Unwrap().Result;
         }
         protected virtual Task<TOutput> ProcessAsync(TArguments args)
         {
             _IsAsyncProcessOverridden = false;
             EnsureProcessOverridden();
 
-            return TaskEx.Run(() => Process(args));
+            return Task.Factory.StartNew(() => Process(args));
         }
     }
 }
