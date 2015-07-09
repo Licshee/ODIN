@@ -8,7 +8,7 @@ namespace ODIN
 #endif
 
     public abstract class OptimizedAsyncHandlerBase<TInput, TArguments, TOutput>
-        : OptimizedHandlerBase<TInput, TArguments, TOutput>, IOptimizedAsyncHandler<TInput, TOutput>
+        : OptimizedHandlerBase<TInput, TArguments, TOutput>
     {
         protected readonly static Task<TOutput> DefaultResultTask = TaskEx.FromResult(default(TOutput));
 
@@ -47,7 +47,7 @@ namespace ODIN
         }
 
         protected override TOutput RetriveOptimized(TArguments args, TInput input)
-            => RetriveOptimizedAsync(args, input).Result;
+            => TaskEx.Run(() =>RetriveOptimizedAsync(args, input)).Result;
         protected virtual Task<TOutput> RetriveOptimizedAsync(TArguments args, TInput input)
             => DefaultResultTask;
 

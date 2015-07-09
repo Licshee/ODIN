@@ -9,8 +9,6 @@
     <Import_RootNamespace>ODIN</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)IOptimizedAsyncHandler.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IOptimizedHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptimizedAsyncHandlerBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptimizedHandlerBase.cs" />
   </ItemGroup>

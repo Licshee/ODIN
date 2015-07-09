@@ -1,7 +1,6 @@
 ﻿namespace ODIN
 {
     public abstract class OptimizedHandlerBase<TInput, TArguments, TOutput>
-        : IOptimizedHandler<TInput, TOutput>
     {
         public TOutput Execute(TInput input)
         {
