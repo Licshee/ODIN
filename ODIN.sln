@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ODIN", "ODIN\ODIN.shproj", "{E53BBCE5-DA98-4691-B79E-4EB2F74DE88D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN.NET40", "ODIN.NET40\ODIN.NET40.csproj", "{92FB9231-92DA-4334-A353-1482CE174F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN.NET45", "ODIN.NET45\ODIN.NET45.csproj", "{8792ACDE-EFC4-447F-98AA-8D73781A1A36}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ODIN\ODIN.projitems*{8792acde-efc4-447f-98aa-8d73781a1a36}*SharedItemsImports = 4
+		ODIN\ODIN.projitems*{92fb9231-92da-4334-a353-1482ce174f65}*SharedItemsImports = 4
+		ODIN\ODIN.projitems*{e53bbce5-da98-4691-b79e-4eb2f74de88d}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92FB9231-92DA-4334-A353-1482CE174F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FB9231-92DA-4334-A353-1482CE174F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FB9231-92DA-4334-A353-1482CE174F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FB9231-92DA-4334-A353-1482CE174F65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8792ACDE-EFC4-447F-98AA-8D73781A1A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8792ACDE-EFC4-447F-98AA-8D73781A1A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8792ACDE-EFC4-447F-98AA-8D73781A1A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8792ACDE-EFC4-447F-98AA-8D73781A1A36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
