@@ -12,14 +12,11 @@ public abstract class OdinFunction<TInput, TCriteria, TOutput>
 
         var gen = ReadyOutputGenerator(input, tcs.SetResult);
 
-        if (task.IsCompleted)
-        {
-            var key = task.Result;
-            if (key != null)
-                return GetCachedOutput(key, gen);
-        }
+        var criteria = task.IsCompleted ? task.Result : null;
+        if (criteria == null)
+            return gen();
 
-        return gen();
+        return GetCachedOutput(criteria, gen);
     }
 
     protected abstract TOutput GetCachedOutput(TCriteria criteria, Func<TOutput> gen);

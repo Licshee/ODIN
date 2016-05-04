@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#if NETFX
+using System;
 using System.Runtime.Caching;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,3 +22,4 @@ public abstract class AlphaTaskOdinFunction<TInput, TOutput> : TaskOdinFunction<
         return value.Value;
     }
 }
+#endif

@@ -30,14 +30,11 @@ public abstract class TaskOdinFunction<TInput, TCriteria, TOutput> : OdinFunctio
 
         var gen = await ReadyOutputGenerator(input, tcs.SetResult, cancellationToken);
 
-        if (task.IsCompleted)
-        {
-            var key = task.Result;
-            if (key != null)
-                return await GetCachedOutput(key, gen, cancellationToken);
-        }
+        var criteria = task.IsCompleted ? task.Result : null;
+        if (criteria == null)
+            return await gen();
 
-        return await gen();
+        return await GetCachedOutput(criteria, gen, cancellationToken);
     }
 
     protected abstract Task<TOutput> GetCachedOutput(TCriteria criteria, Func<Task<TOutput>> gen, CancellationToken cancellationToken = default(CancellationToken));

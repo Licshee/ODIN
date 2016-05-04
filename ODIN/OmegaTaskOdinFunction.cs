@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#if NETFX
+using System;
 using System.Runtime.Caching;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -19,14 +18,11 @@ public abstract class OmegaTaskOdinFunction<TInput, TOutput> : AlphaTaskOdinFunc
 
         var gen = await ReadyOutputGenerator(input, tcs.SetResult, cancellationToken);
 
-        if (task.IsCompleted)
-        {
-            var key = task.Result;
-            if (key != null)
-                return await GetCachedOutput(key, gen, cancellationToken);
-        }
+        var key = task.IsCompleted ? task.Result : null;
+        if (key == null)
+            return await gen();
 
-        return await gen();
+        return await GetCachedOutput(key, gen, cancellationToken);
     }
 
     protected abstract Task<Func<Task<TOutput>>> ReadyOutputGenerator(TInput input, Action<object> setResult, CancellationToken cancellationToken = default(CancellationToken));
@@ -40,3 +36,4 @@ public abstract class OmegaTaskOdinFunction<TInput, TOutput> : AlphaTaskOdinFunc
     protected virtual async Task<TOutput> GetCachedOutput(object key, Func<Task<TOutput>> gen, CancellationToken cancellationToken)
         => await GetCachedOutput(Tuple.Create(key.ToString(), await GetCachePolicy(key)), gen, cancellationToken);
 }
+#endif
