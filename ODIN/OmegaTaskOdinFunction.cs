@@ -25,8 +25,8 @@ public abstract class OmegaTaskOdinFunction<TInput, TOutput> : AlphaTaskOdinFunc
         return await GetCachedOutput(key, gen, cancellationToken);
     }
 
-    protected abstract Task<Func<Task<TOutput>>> ReadyOutputGenerator(TInput input, Action<object> setResult, CancellationToken cancellationToken = default(CancellationToken));
-    protected sealed override Task<Func<Task<TOutput>>> ReadyOutputGenerator(TInput input, Action<Tuple<string, CacheItemPolicy>> setResult, CancellationToken cancellationToken = default(CancellationToken))
+    protected abstract Task<Func<Task<TOutput>>> ReadyOutputGenerator(TInput input, Action<object> setResult, CancellationToken cancellationToken);
+    protected sealed override Task<Func<Task<TOutput>>> ReadyOutputGenerator(TInput input, Action<Tuple<string, CacheItemPolicy>> setResult, CancellationToken cancellationToken)
     {
         throw new NotSupportedException();
     }

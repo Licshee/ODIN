@@ -9,6 +9,9 @@
     <Import_RootNamespace>ODIN</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Criteria\CriterionMeta.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Criteria\CriterionMeta`1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Criteria\CriteriaSource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OmegaTaskOdinFunction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AlphaTaskOdinFunction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OdinFunction.cs" />

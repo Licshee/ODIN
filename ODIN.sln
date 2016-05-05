@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN.NET45", "ODIN.NET45\OD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODIN.PCL", "ODIN.PCL\ODIN.PCL.csproj", "{4D10B0AD-C44A-49C3-8892-F6F76E26DC46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdinTests", "OdinTests\OdinTests.csproj", "{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ODIN\ODIN.projitems*{8792acde-efc4-447f-98aa-8d73781a1a36}*SharedItemsImports = 4
@@ -35,6 +37,10 @@ Global
 		{4D10B0AD-C44A-49C3-8892-F6F76E26DC46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D10B0AD-C44A-49C3-8892-F6F76E26DC46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D10B0AD-C44A-49C3-8892-F6F76E26DC46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E3DF5C2-8A38-4A03-86D7-8D463C917E47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

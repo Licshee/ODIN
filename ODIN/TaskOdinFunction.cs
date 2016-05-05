@@ -37,6 +37,6 @@ public abstract class TaskOdinFunction<TInput, TCriteria, TOutput> : OdinFunctio
         return await GetCachedOutput(criteria, gen, cancellationToken);
     }
 
-    protected abstract Task<TOutput> GetCachedOutput(TCriteria criteria, Func<Task<TOutput>> gen, CancellationToken cancellationToken = default(CancellationToken));
-    protected abstract Task<Func<Task<TOutput>>> ReadyOutputGenerator(TInput input, Action<TCriteria> setResult, CancellationToken cancellationToken = default(CancellationToken));
+    protected abstract Task<TOutput> GetCachedOutput(TCriteria criteria, Func<Task<TOutput>> gen, CancellationToken cancellationToken);
+    protected abstract Task<Func<Task<TOutput>>> ReadyOutputGenerator(TInput input, Action<TCriteria> setResult, CancellationToken cancellationToken);
 }

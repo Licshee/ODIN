@@ -15,7 +15,7 @@ public abstract class AlphaTaskOdinFunction<TInput, TOutput> : TaskOdinFunction<
         _Cache = cacheSet;
     }
 
-    protected override Task<TOutput> GetCachedOutput(Tuple<string, CacheItemPolicy> criteria, Func<Task<TOutput>> gen, CancellationToken cancellationToken = default(CancellationToken))
+    protected override Task<TOutput> GetCachedOutput(Tuple<string, CacheItemPolicy> criteria, Func<Task<TOutput>> gen, CancellationToken cancellationToken)
     {
         var value = new Lazy<Task<TOutput>>(gen);
         value = (Lazy<Task<TOutput>>)_Cache.AddOrGetExisting(criteria.Item1, value, criteria.Item2, _Region);
